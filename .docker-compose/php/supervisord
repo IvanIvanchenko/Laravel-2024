@@ -1,0 +1,15 @@
+[supervisord]
+user=admin
+nodaemon=true
+
+[program:php]
+command=php-fpm
+user=admin
+
+[program:queue-worker]
+command=php /var/www/artisan queue:work --sleep=3 --tries=1
+autostart=true
+autorestart=true
+user=admin
+redirect_stderr=true
+stdout_logfile=/var/www/storage/logs/worker.log

@@ -1,0 +1,6 @@
+##!/bin/bash
+#while :
+#do
+#	php artisan schedule:run --verbose --no-interaction
+#	sleep 5
+#done
